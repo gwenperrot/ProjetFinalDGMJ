@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="styleSheet" type="text/css" href="./css/bootstrap.min.css" />
+</head>
+<body ng-app="myApp">
+
+<div ng-controller="pdtCTRL">
+<h3>Liste</h3>
+<ul>
+  <li ng-repeat="p in produits">
+    {{p.id + ', ' + p.designation + ', ' + p.quantite + ', ' + p.prix}}
+  </li>
+</ul>
+
+</div>
+<div>
+<form ng-controller="ajoutCTRL">
+designation : <input type="text" ng-model="produit.designation"><br/>
+quantité : <input type="number" ng-model="produit.quantite"><br/>
+prix : <input type="number" ng-model="produit.prix"><br/>
+
+<button ng-click="ajouter()">Enregistrer</button>
+</form>
+</div>
+
+<div ng-controller="suppCTRL">
+id : <input type="number" ng-model="produit.id"><br/>
+
+<button ng-click="supprimer()">Supprimer</button>
+
+</div>
+
+	<script type="text/javascript" src="./angular/angular.min.js"></script>
+	<script type="text/javascript" src="./angular/angular-route.js"></script>
+	<script type="text/javascript" src="./js/app.js"></script>
+</body>
+</html>
